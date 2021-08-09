@@ -4,6 +4,7 @@ import taskContext from '../../context/tasks/taskContext';
 
 import { IoMdClose } from 'react-icons/io';
 import { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IAddTaskModal {
   onClose: () => void;
@@ -19,7 +20,7 @@ const AddTaskModal: React.FC<IAddTaskModal> = ({ onClose, isOpen }) => {
   const [descError, setDescError] = useState<boolean>(false);
 
   const tasksContext = useContext(taskContext);
-  const { addNewTask } = tasksContext;
+  const { addNewTask, tasks } = tasksContext;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -41,7 +42,7 @@ const AddTaskModal: React.FC<IAddTaskModal> = ({ onClose, isOpen }) => {
     setDescError(false);
 
     //operacion asincrona
-    addNewTask({ ...values, status: false, id: 5 });
+    addNewTask({ ...values, status: false, id: uuidv4() });
 
     onCloseHandler();
   };

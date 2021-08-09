@@ -27,7 +27,7 @@ const Home = () => {
         {tasks.length > 0 ? (
           <Tasks tasks={tasks} />
         ) : (
-          <p className="empty-message">Aun no se han seleccionado tareas</p>
+          <p className="empty-message">Aun no hay tareas</p>
         )}
       </div>
       <div className="task-detail">

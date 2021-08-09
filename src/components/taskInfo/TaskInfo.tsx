@@ -14,7 +14,7 @@ const TaskInfo: React.FC<ITaskInfo> = ({ currentTask }) => {
   const [values, setValues] = useState<ITask>({
     description: '',
     status: false,
-    id: 0,
+    id: '',
     name: '',
   });
   const [hasChanged, setHasChanged] = useState<Boolean>(false);

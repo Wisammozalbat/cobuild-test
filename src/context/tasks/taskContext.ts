@@ -5,7 +5,7 @@ interface ITaskContext {
   tasks: ITask[];
   currentTask: null | ITask;
   addNewTask: (task: ITask) => void;
-  deleteTask: (id: number) => void;
+  deleteTask: (id: string) => void;
   editTask: (task: ITask) => void;
   getTasks: () => void;
   setCurrentTask: (task: ITask) => void;

@@ -7,7 +7,7 @@ export interface ITask {
   name: string;
   description: string;
   status: boolean;
-  id: number;
+  id: string;
 }
 
 const Task: React.FC<ITask> = ({ description, status, id, name }) => {

@@ -41,6 +41,14 @@ const HomeStyle = styled.div`
     height: 100%;
     overflow: auto;
   }
+
+  .empty-message {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
 `;
 
 export default HomeStyle;

@@ -10,12 +10,12 @@ import {
 } from '../../types';
 import { ITask } from '../../components/task/Task';
 
-const tasks = [
-  { id: 1, name: 'una tarea', description: 'Tarea numero 1', status: false },
-  { id: 2, name: 'una tarea', description: 'Tarea numero 2', status: true },
-  { id: 3, name: 'una tarea', description: 'Tarea numero 3', status: false },
-  { id: 4, name: 'una tarea', description: 'Tarea numero 4', status: false },
-];
+// const tasks = [
+//   { id: 1, name: 'una tarea', description: 'Tarea numero 1', status: false },
+//   { id: 2, name: 'una tarea', description: 'Tarea numero 2', status: true },
+//   { id: 3, name: 'una tarea', description: 'Tarea numero 3', status: false },
+//   { id: 4, name: 'una tarea', description: 'Tarea numero 4', status: false },
+// ];
 
 const TaskState = (props: {
   children:
@@ -41,12 +41,12 @@ const TaskState = (props: {
 
       dispatch({
         type: GET_TASKS,
-        payload: tasks,
+        payload: state.tasks,
       });
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [state.tasks]);
 
   const setCurrentTask = (task: ITask) => {
     dispatch({
@@ -69,7 +69,7 @@ const TaskState = (props: {
     });
   };
 
-  const deleteTask = (id: number) => {
+  const deleteTask = (id: string) => {
     dispatch({
       type: DELETE_TASK,
       payload: id,
